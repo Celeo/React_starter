@@ -10,5 +10,3 @@ const Index = () => {
 }
 
 ReactDOM.render(<Index />, document.getElementById('app'))
-
-module.hot.accept()
