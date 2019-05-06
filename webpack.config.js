@@ -17,10 +17,6 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      },
-      {
-        test: /\.md$/,
-        use: 'raw-loader'
       }
     ]
   },
