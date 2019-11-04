@@ -1,12 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import { App } from './components/App.jsx'
 
-const Index = () => {
-  return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
-  )
+render(<App />, document.getElementById('app'))
+
+if (module.hot) {
+  module.hot.accept('./components/App.jsx', () => {
+    render(<App />, document.getElementById('app'))
+  })
 }
-
-ReactDOM.render(<Index />, document.getElementById('app'))

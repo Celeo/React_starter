@@ -1,13 +1,11 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
-    app: './src/index.js'
-  },
+  entry: './src/index.js',
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
@@ -26,7 +24,12 @@ module.exports = {
       filename: './index.html'
     })
   ],
+  devtool: 'cheap-source-map',
+  target: 'web',
   devServer: {
-    contentBase: './dist'
+    hot: true,
+    injectHot: true,
+    open: false,
+    progress: true
   }
 }
